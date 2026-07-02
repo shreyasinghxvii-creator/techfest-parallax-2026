@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techfest 2026 | IIT Bombay</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <canvas id="webgl-canvas"></canvas>
+
+    <header class="hud-header">
+        <div class="hud-logo">TECHFEST<span>2026</span></div>
+        <nav>
+            <ul class="hud-nav-center">
+                <li><a href="#hero" class="hud-nav-link active">HOME</a></li>
+                <li><a href="#about" class="hud-nav-link">HIGHLIGHTS</a></li>
+                <li><a href="#matrix" class="hud-nav-link">REGISTER</a></li>
+            </ul>
+        </nav>
+        <div class="hud-phase-counter">IIT BOMBAY // MAIN STAGE</div>
+    </header>
+
+    <main class="scroll-container">
+        
+        <section id="hero" class="scroll-section">
+            <div class="asymmetric-layout-frame">
+                <div class="viewport-clear-window"></div>
+                
+                <div class="interactive-interface-panel">
+                    <div class="hero-terminal-display">
+                        <h1 class="hero-line white-emit">TECHFEST</h1>
+                        <h1 class="hero-line cyan-emit">INNOVATION</h1>
+                    </div>
+                    <p class="section-description-text">
+                        Welcome to Asia's largest science and technology festival. Join thousands of developers, engineering students, and global tech leaders at IIT Bombay to explore the advancements shaping our future.
+                    </p>
+                    <div class="button-wrapper-magenta">
+                        <a href="#matrix" class="action-button-cta">GET YOUR ACCESS PASS</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="scroll-section">
+            <div class="asymmetric-layout-frame">
+                <div class="viewport-clear-window"></div>
+                
+                <div class="interactive-interface-panel">
+                    <div class="section-title-wrapper">
+                        <span class="section-pre-tag">// CORE_EVENTS</span>
+                        <h2 class="section-heading-text">FESTIVAL DOMAINS</h2>
+                    </div>
+                    
+                    <div class="telemetry-matrix-grid">
+                        
+                        <div class="matrix-card cyan-accent">
+                            <div class="card-header-meta">
+                                <span class="micro-status-tag">COMPETITION</span>
+                                <i class="fa-solid fa-microchip card-vector-node"></i>
+                            </div>
+                            <h3 class="card-event-label">ROBOTICS ARENA</h3>
+                        </div>
+
+                        <div class="matrix-card cyan-accent">
+                            <div class="card-header-meta">
+                                <span class="micro-status-tag">HACKATHON</span>
+                                <i class="fa-solid fa-network-wired card-vector-node"></i>
+                            </div>
+                            <h3 class="card-event-label">NATIONAL CODING NATION</h3>
+                        </div>
+
+                        <div class="matrix-card cyan-accent">
+                            <div class="card-header-meta">
+                                <span class="micro-status-tag">EXHIBITION</span>
+                                <i class="fa-solid fa-terminal card-vector-node"></i>
+                            </div>
+                            <h3 class="card-event-label">GLOBAL TECH EXPO</h3>
+                        </div>
+
+                        <div class="matrix-card magenta-accent">
+                            <div class="card-header-meta">
+                                <span class="micro-status-tag">KEYNOTE</span>
+                                <i class="fa-solid fa-circle-nodes card-vector-node"></i>
+                            </div>
+                            <h3 class="card-event-label">LEADERSHIP LECTURES</h3>
+                        </div>
+
+                        <div class="matrix-card magenta-accent">
+                            <div class="card-header-meta">
+                                <span class="micro-status-tag">WORKSHOP</span>
+                                <i class="fa-solid fa-server card-vector-node"></i>
+                            </div>
+                            <h3 class="card-event-label">ARTIFICIAL INTELLIGENCE</h3>
+                        </div>
+
+                        <div class="matrix-card magenta-accent">
+                            <div class="card-header-meta">
+                                <span class="micro-status-tag">WORKSHOP</span>
+                                <i class="fa-solid fa-shield-halved card-vector-node"></i>
+                            </div>
+                            <h3 class="card-event-label">AEROSPACE SYSTEMS</h3>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="matrix" class="scroll-section">
+            <div class="asymmetric-layout-frame">
+                <div class="viewport-clear-window"></div>
+                
+                <div class="interactive-interface-panel">
+                    <div class="section-title-wrapper">
+                        <span class="section-pre-tag">// JOIN_THE_MOVEMENT</span>
+                        <h2 class="section-heading-text">SECURE YOUR ATTENDANCE</h2>
+                    </div>
+                    
+                    <div class="terminal-deck-module">
+                        <div class="terminal-header-bar">
+                            <span class="terminal-status-light blinking"></span>
+                            <span class="terminal-header-title">OFFICIAL_REGISTRATION_PORTAL</span>
+                        </div>
+                        <div class="terminal-body-content">
+                            <p class="terminal-echo-text"><span class="text-glow-cyan">&gt; REGISTRATION IS OPEN</span></p>
+                            <p class="terminal-echo-text">&gt; Please provide your email address to secure your free general entry pass.</p>
+                            
+                            <form class="terminal-input-row" onsubmit="event.preventDefault(); alert('Registration pass requested successfully.');">
+                                <span class="terminal-prompt-arrow">&gt;</span>
+                                <input type="email" class="terminal-text-field" placeholder="Enter your email address" required>
+                                <button type="submit" class="terminal-submit-btn">REGISTER</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="hud-footer-ribbon">
+        <a href="#about" class="interactive-anchor"><i class="fa-solid fa-chevron-down icon-pad"></i> EXPLORE MAIN HIGHLIGHTS AND EVENTS</a>
+        <div class="hud-system-time">LOCATION: IIT BOMBAY</div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <script src="script.js"></script>
+</body>
+</html>

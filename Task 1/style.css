@@ -1,0 +1,415 @@
+/* --- Global Reset & Variables --- */
+:root {
+    --bg-color: #0a0a0a;
+    --neon-cyan: #00ffff;
+    --neon-magenta: #ff00ff;
+    --text-primary: #ffffff;
+    --text-secondary: #888888;
+    --grid-color: rgba(0, 255, 255, 0.03);
+    --font-cyber: 'Orbitron', sans-serif;
+    --font-sub: 'Rajdhani', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-sub);
+    overflow-x: hidden;
+    /* Circuit Board Grid Effect */
+    background-image: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-family: var(--font-cyber);
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-item {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: var(--font-cyber);
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px var(--neon-cyan);
+}
+
+.btn-nav {
+    border: 1px solid var(--neon-magenta);
+    padding: 0.5rem 1.2rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: var(--font-cyber);
+    font-size: 0.9rem;
+    margin-left: 1rem;
+    background: transparent;
+    box-shadow: inset 0 0 0 0 var(--neon-magenta);
+    transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+    box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.5), 0 0 15px var(--neon-magenta);
+    color: #fff;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* Glitch Typography */
+.glitch-wrapper {
+    margin-top: 60px;
+}
+
+.glitch {
+    font-family: var(--font-cyber);
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    position: relative;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--neon-cyan);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--neon-magenta), 0 2px var(--neon-cyan);
+    clip: rect(85px, 450px, 140px, 0);
+    animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: var(--neon-cyan);
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+}
+
+/* --- Countdown Timer --- */
+.countdown-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    padding: 1.5rem;
+    min-width: 100px;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.time-box span {
+    font-family: var(--font-cyber);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: block;
+}
+
+.time-box p {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--neon-cyan);
+}
+
+/* Cyber Button */
+.btn-cyber {
+    position: relative;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 1px solid var(--neon-cyan);
+    color: #fff;
+    font-family: var(--font-cyber);
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-cyber:hover {
+    background: var(--neon-cyan);
+    color: #000;
+    box-shadow: 0 0 25px var(--neon-cyan);
+}
+
+/* --- About Section --- */
+.about-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.section-title h2 {
+    font-family: var(--font-cyber);
+    font-size: 2rem;
+    color: var(--neon-magenta);
+    text-shadow: 0 0 10px var(--neon-magenta);
+    margin-bottom: 3rem;
+    letter-spacing: 3px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.about-card {
+    background: rgba(10, 10, 10, 0.6);
+    border: 1px solid rgba(255, 0, 255, 0.15);
+    padding: 2.5rem;
+    transition: all 0.4s ease;
+}
+
+.about-card:hover {
+    border-color: var(--neon-magenta);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 0, 255, 0.1);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--neon-cyan);
+    margin-bottom: 1.5rem;
+}
+
+.about-card h3 {
+    font-family: var(--font-cyber);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.about-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* --- CTA Section --- */
+.cta-section {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-box {
+    background: radial-gradient(circle, rgba(255,0,255,0.05) 0%, rgba(0,0,0,0) 70%);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.cta-box h2 {
+    font-family: var(--font-cyber);
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.cta-box p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.register-form {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.register-form input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    color: #fff;
+    font-family: var(--font-cyber);
+}
+
+.register-form input:focus {
+    outline: none;
+    border-color: var(--neon-magenta);
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- Mobile Menu & Responsive Logic --- */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: var(--text-primary);
+}
+
+@media(max-width: 768px) {
+    .menu-toggle { display: block; }
+    
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background-color: var(--neon-cyan); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background-color: var(--neon-cyan); }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        text-align: center;
+        transition: 0.3s ease;
+        padding: 2rem 0;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    }
+
+    .nav-links.active { left: 0; }
+    .nav-links li { margin: 1.5rem 0; }
+    .btn-nav { margin-left: 0; }
+    
+    .glitch { font-size: 3rem; }
+    .subtitle { font-size: 1rem; }
+    .countdown-container { gap: 0.5rem; }
+    .time-box { min-width: 70px; padding: 1rem 0.5rem; }
+    .time-box span { font-size: 1.7rem; }
+    .register-form { flex-direction: column; }
+}
+
+/* --- Keyframe Animations --- */
+@keyframes glitch-anim {
+  0% { clip: rect(31px, 9999px, 94px, 0); }
+  10% { clip: rect(112px, 9999px, 76px, 0); }
+  20% { clip: rect(85px, 9999px, 5px, 0); }
+  30% { clip: rect(27px, 9999px, 115px, 0); }
+  40% { clip: rect(73px, 9999px, 29px, 0); }
+  50% { clip: rect(118px, 9999px, 142px, 0); }
+  60% { clip: rect(44px, 9999px, 53px, 0); }
+  70% { clip: rect(12px, 9999px, 85px, 0); }
+  80% { clip: rect(99px, 9999px, 134px, 0); }
+  90% { clip: rect(43px, 9999px, 11px, 0); }
+  100% { clip: rect(67px, 9999px, 50px, 0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(76px, 9999px, 116px, 0); }
+  11% { clip: rect(43px, 9999px, 98px, 0); }
+  22% { clip: rect(122px, 9999px, 14px, 0); }
+  33% { clip: rect(5px, 9999px, 70px, 0); }
+  44% { clip: rect(89px, 9999px, 112px, 0); }
+  55% { clip: rect(31px, 9999px, 58px, 0); }
+  66% { clip: rect(140px, 9999px, 22px, 0); }
+  77% { clip: rect(68px, 9999px, 105px, 0); }
+  88% { clip: rect(10px, 9999px, 134px, 0); }
+  100% { clip: rect(94px, 9999px, 53px, 0); }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techfest 2026 | IIT Bombay</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="global-navbar">
+        <div class="nav-brand">TECHFEST <span class="cyan-highlight">2026</span></div>
+        <nav class="nav-menu">
+            <a href="#welcome" class="menu-item active">Welcome</a>
+            <a href="#exhibitions" class="menu-item">Exhibitions</a>
+            <a href="#competitions" class="menu-item">Competitions</a>
+            <a href="#gate" class="menu-item nav-cta">Get Pass</a>
+        </nav>
+    </header>
+
+    <div class="viewport-progress-dock">
+        <div class="progress-dot active" data-anchor="welcome"></div>
+        <div class="progress-dot" data-anchor="exhibitions"></div>
+        <div class="progress-dot" data-anchor="competitions"></div>
+        <div class="progress-dot" data-anchor="gate"></div>
+    </div>
+
+    <main class="motion-canvas">
+
+        <section id="welcome" class="parallax-section">
+            <div class="parallax-layer background geometry-matrix">
+                <div class="vector-grid-axis"></div>
+                <div class="vector-concentric-circle"></div>
+            </div>
+            
+            <div class="foreground-content reveal-init">
+                <div class="hero-center-alignment">
+                    <span class="section-badge">IIT Bombay Pioneers</span>
+                    <h1 class="main-display-title">Techfest 2026</h1>
+                    <p class="main-display-subtitle">Exploring Next-Gen Engineering</p>
+                    <a href="#exhibitions" class="scroll-action-anchor">
+                        <span>Begin Journey</span>
+                        <i class="fa-solid fa-arrow-down short-bounce"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="exhibitions" class="parallax-section">
+            <div class="parallax-layer background typography-matrix">
+                <div class="giant-ghost-text">EXHIBIT</div>
+            </div>
+            
+            <div class="foreground-content reveal-init">
+                <div class="layout-container">
+                    <div class="heading-block">
+                        <span class="section-badge">Global Showcases</span>
+                        <h2 class="section-title-text">International Tech Exhibitions</h2>
+                    </div>
+                    
+                    <div class="symmetrical-flex-grid">
+                        <div class="data-panel-container">
+                            <div class="panel-icon-shield"><i class="fa-solid fa-globe"></i></div>
+                            <h3>Global Innovation Hub</h3>
+                            <p>Witness groundbreaking technological wonders brought directly to IIT Bombay from over twenty countries. Explore clean energy prototypes, alternative fuel frameworks, and smart infrastructure research pushing our global societies forward.</p>
+                        </div>
+                        
+                        <div class="data-panel-container">
+                            <div class="panel-icon-shield"><i class="fa-solid fa-robot"></i></div>
+                            <h3>Advanced Robotics</h3>
+                            <p>Get up close with autonomous flight vehicles, precise industrial manipulators, and biomimetic hardware systems engineered by top academic labs and elite industrial research hubs worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="competitions" class="parallax-section">
+            <div class="parallax-layer background scale-matrix">
+                <div class="technical-hash-ruler left-ruler"></div>
+                <div class="technical-hash-ruler right-ruler"></div>
+            </div>
+            
+            <div class="foreground-content reveal-init">
+                <div class="layout-container">
+                    <div class="heading-block">
+                        <span class="section-badge">Elite Arenas</span>
+                        <h2 class="section-title-text">National Hardware Challenges</h2>
+                    </div>
+                    
+                    <div class="showcase-rows-stack">
+                        <div class="row-card-component">
+                            <div class="card-numeric-index">01</div>
+                            <div class="card-narrative-details">
+                                <h3>Algorithm Arenas</h3>
+                                <p>Put your software paradigms to the test in high-speed, structural execution environments. Compete against top programmers in complex cryptographic decryptions, systemic structural modeling, and rapid open hackathons.</p>
+                            </div>
+                        </div>
+
+                        <div class="row-card-component">
+                            <div class="card-numeric-index">02</div>
+                            <div class="card-narrative-details">
+                                <h3>National Engineering Duels</h3>
+                                <p>Experience intense, high-stakes structural robotics combat championships and precision flight courses where custom-designed machines push build quality, endurance, and remote control logic past their limits.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gate" class="parallax-section">
+            <div class="parallax-layer background floating-box-matrix">
+                <div class="ambient-geometric-cube"></div>
+            </div>
+            
+            <div class="foreground-content reveal-init">
+                <div class="registration-panel-shield">
+                    <div class="registration-header">
+                        <div class="badge-icon-lock"><i class="fa-solid fa-ticket"></i></div>
+                        <h2>Secure Your Access</h2>
+                        <p>General entry passes for the events, keynotes, and exhibition arenas are limited. Submit your email below to reserve your digital gate pass instantly.</p>
+                    </div>
+                    
+                    <form class="secure-access-form" onsubmit="event.preventDefault(); alert('Pass registered successfully. Welcome to Techfest 2026.');">
+                        <div class="input-field-wrapper">
+                            <label for="attendee-email" class="field-accessibility-label">Email Address</label>
+                            <input type="email" id="attendee-email" class="clean-email-input" placeholder="Enter your email address" required>
+                        </div>
+                        <button type="submit" class="submit-action-btn">
+                            <span>Generate Access Ticket</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

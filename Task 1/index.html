@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techfest 2026 | IIT Bombay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">TECHFEST<span>2026</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#hero" class="nav-item active">Home</a></li>
+                <li><a href="#about" class="nav-item">About</a></li>
+                <li><a href="#timer-section" class="nav-item">Timeline</a></li>
+                <li><a href="#register" class="btn-nav">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="glitch-wrapper">
+            <div class="glitch" data-text="TECHFEST 2026">TECHFEST 2026</div>
+        </div>
+        <p class="subtitle">Asia's Largest Science and Technology Festival</p>
+        
+        <div id="timer-section" class="countdown-container">
+            <div class="time-box">
+                <span id="days">00</span>
+                <p>DAYS</p>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <p>HOURS</p>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <p>MINS</p>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <p>SECS</p>
+            </div>
+        </div>
+
+        <a href="#register" class="btn-cyber">
+            <span class="btn-text">EXPLORE THE FESTIVAL</span>
+        </a>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="section-title">
+            <h2>// FESTIVAL HIGHLIGHTS</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-card">
+                <i class="fa-solid fa-microchip card-icon"></i>
+                <h3>Next-Gen Innovations</h3>
+                <p>Explore groundbreaking technical exhibitions, displaying revolutionary project models and engineering prototypes from all over the world.</p>
+            </div>
+            <div class="about-card">
+                <i class="fa-solid fa-robot card-icon"></i>
+                <h3>Robotics Arenas</h3>
+                <p>Witness international engineering teams square off in intense, high-stakes autonomous challenges, automated speed runs, and combat grids.</p>
+            </div>
+            <div class="about-card">
+                <i class="fa-solid fa-terminal card-icon"></i>
+                <h3>Coding Hackathons</h3>
+                <p>Test your development limits against complex algorithm design puzzles, network optimization tasks, and rapid software hackathons.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="cta-section">
+        <div class="cta-box">
+            <h2>SECURE YOUR ACCESS PASS</h2>
+            <p>Registration for competitive tracks and elite workshops fills up quickly. Secure your spot at Techfest today.</p>
+            <form class="register-form" id="nexusForm">
+                <input type="email" placeholder="Enter your email address" required class="cyber-input">
+                <button type="submit" class="btn-cyber">
+                    <span class="btn-text">REGISTER NOW</span>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Techfest IIT Bombay. All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

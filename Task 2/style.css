@@ -1,0 +1,532 @@
+/* --- GLOBAL HARDWARE INITIALIZATION & DESIGN ROOT --- */
+:root {
+    --bg-cyber-black: #030305;
+    --neon-cyan: #00ffff;
+    --neon-magenta: #ff00ff;
+    --text-pure-white: #ffffff;
+    --text-telemetry-muted: #6c7d93;
+    --interface-card-base: rgba(5, 7, 12, 0.82);
+    
+    /* Typography References */
+    --font-heading-hud: 'Orbitron', sans-serif;
+    --font-telemetry-data: 'Rajdhani', sans-serif;
+    
+    /* Cathode-Ray Tube Light Emission Shadows */
+    --cyan-glow-filter: 0 0 5px rgba(0, 255, 255, 0.6), 0 0 15px rgba(0, 255, 255, 0.3), 0 0 35px rgba(0, 255, 255, 0.1);
+    --magenta-glow-filter: 0 0 5px rgba(255, 0, 255, 0.6), 0 0 15px rgba(255, 0, 255, 0.3), 0 0 35px rgba(255, 0, 255, 0.1);
+    --bezier-physics-dampening: cubic-bezier(0.25, 1, 0.25, 1);
+}
+
+/* --- DOCUMENT RESET LAYOUT SYSTEMS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-cyber-black);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    color: var(--text-pure-white);
+    font-family: var(--font-telemetry-data);
+    overflow-x: hidden;
+    
+    /* CSS Hardware Grid Simulation Overlay */
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* --- FIXED WEBGL PERSPECTIVE CONTAINER --- */
+#webgl-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none; /* User cursor acts through the asset space */
+}
+
+/* --- TOP LEVEL NAVIGATION HUD PANEL --- */
+.hud-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.75rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.08);
+    background: linear-gradient(to bottom, rgba(3, 3, 5, 0.95) 0%, rgba(3, 3, 5, 0) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.hud-logo {
+    font-family: var(--font-heading-hud);
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    color: var(--text-pure-white);
+}
+
+.hud-logo span {
+    color: var(--neon-cyan);
+    text-shadow: var(--cyan-glow-filter);
+}
+
+.hud-nav-center {
+    display: flex;
+    gap: 3.5rem;
+    list-style: none;
+}
+
+.hud-nav-link {
+    text-decoration: none;
+    color: var(--text-telemetry-muted);
+    font-family: var(--font-heading-hud);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: color 0.4s var(--bezier-physics-dampening), text-shadow 0.4s var(--bezier-physics-dampening);
+}
+
+.hud-nav-link:hover, .hud-nav-link.active {
+    color: var(--neon-cyan);
+    text-shadow: var(--cyan-glow-filter);
+}
+
+.hud-phase-counter {
+    font-family: var(--font-heading-hud);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--neon-magenta);
+    border: 1px solid var(--neon-magenta);
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 0, 255, 0.03);
+    box-shadow: inset 0 0 10px rgba(255, 0, 255, 0.15);
+    text-shadow: var(--magenta-glow-filter);
+}
+
+/* --- ASYMMETRICAL MULTI-SECTION ENGINE TIMELINE --- */
+.scroll-container {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+.scroll-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.asymmetric-layout-frame {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 0 3.5rem;
+}
+
+/* Left Window Block Frame Kept Empty To Render Underlying 3D Asset Cleanly */
+.viewport-clear-window {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Right Content Overlay Alignment */
+.interactive-interface-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3rem;
+}
+
+/* --- SECTION 1 SPECIFIC UI ELEMENTS --- */
+.hero-terminal-display {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.hero-line {
+    font-family: var(--font-heading-hud);
+    font-size: 5.5rem;
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.hero-line.white-emit {
+    color: var(--text-pure-white);
+}
+
+.hero-line.cyan-emit {
+    color: var(--neon-cyan);
+    text-shadow: var(--cyan-glow-filter);
+}
+
+.section-description-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-telemetry-muted);
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+
+.button-wrapper-magenta {
+    align-self: flex-start;
+    padding: 2px;
+    background: linear-gradient(90deg, var(--neon-magenta), transparent);
+    transition: transform 0.3s var(--bezier-physics-dampening);
+}
+
+.action-button-cta {
+    display: inline-block;
+    background-color: var(--bg-cyber-black);
+    color: var(--text-pure-white);
+    border: 2px solid var(--neon-magenta);
+    padding: 0.9rem 2.5rem;
+    font-family: var(--font-heading-hud);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.4s var(--bezier-physics-dampening), background-color 0.4s var(--bezier-physics-dampening), box-shadow 0.4s var(--bezier-physics-dampening);
+}
+
+.action-button-cta:hover {
+    background-color: var(--neon-magenta);
+    color: #000000;
+    box-shadow: var(--magenta-glow-filter);
+}
+
+.button-wrapper-magenta:hover {
+    transform: translateX(4px);
+}
+
+/* --- SECTION 2 SPECIFIC UI ELEMENTS --- */
+.section-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.5rem;
+}
+
+.section-pre-tag {
+    font-family: var(--font-heading-hud);
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    color: var(--text-telemetry-muted);
+    margin-bottom: 0.25rem;
+}
+
+.section-heading-text {
+    font-family: var(--font-heading-hud);
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: var(--text-pure-white);
+}
+
+/* Telemetry Grid Architecture Definition */
+.telemetry-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 850px;
+}
+
+.matrix-card {
+    background: var(--interface-card-base);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 1.5rem;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    transition: transform 0.4s var(--bezier-physics-dampening), background 0.4s var(--bezier-physics-dampening), border-color 0.4s var(--bezier-physics-dampening), box-shadow 0.4s var(--bezier-physics-dampening);
+}
+
+/* Row Left Structural Indicator Configurations */
+.matrix-card.cyan-accent {
+    border-left: 4px solid var(--neon-cyan);
+}
+
+.matrix-card.magenta-accent {
+    border-left: 4px solid var(--neon-magenta);
+}
+
+/* High Contrast Interface Card Hover Parameters */
+.matrix-card:hover {
+    background: rgba(10, 16, 28, 0.9);
+    transform: translateY(-6px);
+}
+
+.matrix-card.cyan-accent:hover {
+    border-color: rgba(0, 255, 255, 0.4);
+    box-shadow: 0 10px 25px rgba(0, 255, 255, 0.15), inset 0 0 15px rgba(0, 255, 255, 0.05);
+}
+
+.matrix-card.magenta-accent:hover {
+    border-color: rgba(255, 0, 255, 0.4);
+    box-shadow: 0 10px 25px rgba(255, 0, 255, 0.15), inset 0 0 15px rgba(255, 0, 255, 0.05);
+}
+
+.card-header-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.micro-status-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-telemetry-muted);
+}
+
+.card-vector-node {
+    font-size: 1.3rem;
+}
+
+.cyan-accent .card-vector-node { color: var(--neon-cyan); text-shadow: var(--cyan-glow-filter); }
+.magenta-accent .card-vector-node { color: var(--neon-magenta); text-shadow: var(--magenta-glow-filter); }
+
+.card-event-label {
+    font-family: var(--font-heading-hud);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    color: var(--text-pure-white);
+}
+
+/* --- SECTION 3 SPECIFIC UI ELEMENTS --- */
+.terminal-deck-module {
+    width: 100%;
+    max-width: 650px;
+    background: rgba(4, 5, 8, 0.9);
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.terminal-header-bar {
+    background: rgba(12, 16, 24, 0.8);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+.terminal-status-light {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--neon-cyan);
+    box-shadow: var(--cyan-glow-filter);
+}
+
+.terminal-status-light.blinking {
+    animation: terminal-pulse-glow 2s infinite ease-in-out;
+}
+
+.terminal-header-title {
+    font-family: var(--font-heading-hud);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--text-telemetry-muted);
+}
+
+.terminal-body-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.terminal-echo-text {
+    font-family: var(--font-heading-hud);
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: var(--text-telemetry-muted);
+    line-height: 1.5;
+}
+
+.text-glow-cyan {
+    color: var(--neon-cyan);
+    text-shadow: var(--cyan-glow-filter);
+}
+
+.terminal-input-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+    transition: border-color 0.3s ease;
+}
+
+.terminal-input-row:focus-within {
+    border-color: var(--neon-cyan);
+}
+
+.terminal-prompt-arrow {
+    font-family: var(--font-heading-hud);
+    color: var(--neon-cyan);
+    font-weight: 700;
+}
+
+.terminal-text-field {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-pure-white);
+    font-family: var(--font-heading-hud);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.terminal-text-field::placeholder {
+    color: rgba(108, 125, 147, 0.4);
+}
+
+.terminal-submit-btn {
+    background: transparent;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    font-family: var(--font-heading-hud);
+    font-size: 0.75rem;
+    padding: 0.4rem 1.25rem;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s var(--bezier-physics-dampening);
+}
+
+.terminal-submit-btn:hover {
+    background-color: var(--neon-cyan);
+    color: #000000;
+    box-shadow: var(--cyan-glow-filter);
+}
+
+/* --- BOTTOM HUD UTILITY RIBBON DECK --- */
+.hud-footer-ribbon {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: linear-gradient(to top, rgba(3, 3, 5, 0.95) 0%, rgba(3, 3, 5, 0) 100%);
+    z-index: 100;
+}
+
+.interactive-anchor {
+    font-family: var(--font-heading-hud);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-telemetry-muted);
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.interactive-anchor:hover {
+    color: var(--neon-cyan);
+    text-shadow: var(--cyan-glow-filter);
+}
+
+.icon-pad {
+    margin-right: 0.5rem;
+}
+
+.hud-system-time {
+    font-family: var(--font-heading-hud);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--text-telemetry-muted);
+}
+
+/* --- ANIMATION KEYFRAME CYCLES --- */
+@keyframes terminal-pulse-glow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* --- VIEWPORT RESPONSIVE RENDERING MATRIX --- */
+@media (max-width: 1280px) {
+    .asymmetric-layout-frame {
+        grid-template-columns: 100%;
+        padding-top: 8rem;
+    }
+    .viewport-clear-window {
+        display: none;
+    }
+    .interactive-interface-panel {
+        padding-left: 0;
+    }
+    #webgl-canvas {
+        opacity: 0.3; /* Low visibility behind text layers on small devices */
+    }
+    .telemetry-matrix-grid {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hud-header {
+        padding: 1.25rem 1.75rem;
+    }
+    .hud-nav-center {
+        display: none;
+    }
+    .asymmetric-layout-frame {
+        padding: 0 1.75rem;
+    }
+    .hero-line {
+        font-size: 3.5rem;
+    }
+    .section-heading-text {
+        font-size: 2rem;
+    }
+    .telemetry-matrix-grid {
+        grid-template-columns: 100%;
+    }
+    .hud-footer-ribbon {
+        padding: 1.5rem 1.75rem;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
